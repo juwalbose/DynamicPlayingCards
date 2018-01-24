@@ -13,8 +13,13 @@ public class PlayingCards : MonoBehaviour {
 		textureManager.CreateTexture("diamond");
 		textureManager.CreateTexture("clubs");
 		textureManager.CreateTexture("spades");
+		textureManager.CreateRoundedRectangle("base");
+		textureManager.CreateRoundedRectangle("back");
 		textureManager.PackTextures();
-		Sprite sprite= Sprite.Create(textureManager.PackedTexture,textureManager.GetTextureRectByName("spades"),new Vector2(0.5f,0.5f),1);
+		SpriteMeshType spriteMeshType= SpriteMeshType.FullRect;
+		//Sprite sprite= Sprite.Create(textureManager.PackedTexture,textureManager.GetTextureRectByName("back"),new Vector2(0.5f,0.5f),1,0,spriteMeshType);
+		//Sprite sprite= Sprite.Create(textureManager.TilingTexture,new Rect(0,0,textureManager.TilingTexture.width,textureManager.TilingTexture.height),new Vector2(0.5f,0.5f),1,0,spriteMeshType);
+		Sprite sprite= Sprite.Create(textureManager.PackedTexture,new Rect(0,0,textureManager.PackedTexture.width,textureManager.PackedTexture.height),new Vector2(0.5f,0.5f),1);
 		spriteRenderer.sprite=sprite; 
 	}
 	
